@@ -10,7 +10,41 @@
        | Alberto   |       1234 | Repartidor      |
        | Angelo    |       1234 | Repartidor      |
        | Jefferson |       1234 | Repartidor      |
-       | Frank     |       1234 | Repartidor      |
+       | Frank     |       1234 | Repartidor      | 
 
 
+** Casos de uso
+   
 
+*** Administrador
+    
+**** Pantalla *Asignar*
+     Asignación automática de los cuatro paquetes a repartidores.
+     Al cancelar se reinicia la información (reset). Para posibilitar
+     asignación manual o una nueva asignación automática.
+
+     Asignación manual, seleccionando un repartidor para cada paquete.
+     Pulsar el botón "Finalizar asignación manual" para confirmar.
+
+     Paquetes ya entregados o con incidencia desaparecen de la lista.
+
+**** Pantalla *Lista Repartidores*     
+     Pulsando en cada repartidor se puede ver su información y cada paquete correctamente entregado.
+
+**** Pantalla *Incidencias*
+     Aparece información sobre los paquetes con incidencias.
+
+*** Repartidor
+
+**** Pantalla *Lista paquetes*
+     Muestra los paquetes asignados.
+
+**** Pantalla *Entrega*
+
+     Muestra información sobre el paquete en curso. Se puede realizar la entrega o informar de una incidencia.
+
+***** Realizar entrega
+      Repartidor escribe los datos del cliente final y confirma la entrega. 
+
+***** Incidencia
+      Repartidor elige el tipo de incedencia ocurrida y la reporta.
