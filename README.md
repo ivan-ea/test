@@ -4,7 +4,7 @@
 
 
       | Nombre    | Contraseña | Tipo de Usuario |
-      | --------- | ---------- | --------------- |
+      | :-------- | :--------- | :-------------- |
       | Cristian  |       1234 | Administrador   |
       | Ivan      |       1234 | Administrador   |
       | Alberto   |       1234 | Repartidor      |
