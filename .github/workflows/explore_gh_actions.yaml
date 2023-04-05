@@ -49,13 +49,13 @@ jobs:
           java -version
           pwd
           ls
-          echo --
+          echo "--"
           ls CI-deepimagej-bioimage-io
-          echo --
+          echo "--"
           ls $GITHUB_WORKSPACE | tee output.txt
-          echo --
+          echo "--"
           echo ~
-          echo --
+          echo "--"
           echo $HOME
       - name: Checking that previous output still there
         run: |
