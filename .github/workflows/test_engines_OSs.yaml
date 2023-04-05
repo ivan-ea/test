@@ -1,13 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI - learning how to use gh-actions
+name: test different engines and OS's
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
-    branches: [ "master" ]
-
   # Allows you to run this workflow manually from the Actions tab (github website)
   workflow_dispatch:
 
@@ -90,8 +86,19 @@ jobs:
           chmod +x ./bash_scripts/check_initial_CI.sh
           bash ./bash_scripts/check_initial_CI.sh
 
-      - name: check the commands that will be run for reproduction
+      - name: run download pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
-          bb "(require '[reproduce.run-fiji-scripts :as r]) (r/build-bash-script)"
-          head -n 20 ../resources/test_the_models.sh
+          bb -m core.main -j pending_matrix/different_engines.json download
+          bb "(require '[reproduce.setup-fiji :as r]) (r/setup-fiji-&-deepimagej)"
+          ls -R ../models
+
+      - name: run reproduce pipeline
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: |
+          ~/blank_fiji/Fiji.app/ImageJ-* --headless --console --ij2 --run ./src/reproduce/test_many_with_deepimagej.clj
+          # TODO run this command with proper executable name and paths from the CI (using bb.process?:)
+          ls -R ../models
+          echo "Now not all models in a row"
+          bb -m core.main reproduce
+          ls -R ../models          
