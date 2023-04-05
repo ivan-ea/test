@@ -94,4 +94,4 @@ jobs:
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
           bb "(require '[reproduce.run-fiji-scripts :as r]) (r/build-bash-script)"
-          head -n 20 ../resources/test_the_models.sh
+          head -n 30 ../resources/test_the_models.sh
