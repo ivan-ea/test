@@ -48,9 +48,9 @@ jobs:
         run: |
           java -version
           pwd
-          ls -la
+          ls
           echo --
-          ls -la CI-deepimagej-bioimage-io
+          ls CI-deepimagej-bioimage-io
           echo --
           ls $GITHUB_WORKSPACE | tee output.txt
           echo --
@@ -77,10 +77,12 @@ jobs:
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
           bb --version
+          bb '(System/getProperty "os.name")'
           bb -m core.main -h
           bb -m core.main -u # run all unit tests
           bb "(require '[core.cli-test]) (clojure.test/run-tests 'core.cli-test)" # run core unit tests
-          bb -m core.main -j pending_matrix/variety_models.json
+          bb -m core.main -j pending_matrix/variety_models.json init
+          bb "(require '[reproduce.setup-fiji :as r]) (r/setup-fiji-&-deepimagej)"
 
       - name: check that initial pipeline of CI went OK
         working-directory: ./CI-deepimagej-bioimage-io/
