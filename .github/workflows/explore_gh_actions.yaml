@@ -77,7 +77,7 @@ jobs:
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
           bb --version
-          bb '(System/getProperty "os.name")'
+          bb ../scripts/info.clj
           bb -m core.main -h
           bb -m core.main -u # run all unit tests
           bb "(require '[core.cli-test]) (clojure.test/run-tests 'core.cli-test)" # run core unit tests

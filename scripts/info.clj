@@ -1,0 +1,1 @@
+(println "The OS you are in, according to java is:" (System/getProperty "os.name"))
