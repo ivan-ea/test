@@ -83,6 +83,7 @@ jobs:
           bb -m core.main -j pending_matrix/variety_models.json
 
       - name: check that initial pipeline of CI went OK
+        working-directory: ./CI-deepimagej-bioimage-io/
         run: |
-          chmod +x ./CI-deepimagej-bioimage-io/bash_scripts/check_initial_CI.sh
-          bash ./CI-deepimagej-bioimage-io/bash_scripts/check_initial_CI.sh
+          chmod +x ./bash_scripts/check_initial_CI.sh
+          bash ./bash_scripts/check_initial_CI.sh
