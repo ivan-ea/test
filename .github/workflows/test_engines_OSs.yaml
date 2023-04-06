@@ -107,11 +107,12 @@ jobs:
       - name: run reproduce pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
-          #~/blank_fiji/Fiji.app/ImageJ-* --headless --console --ij2 --run ./src/reproduce/test_many_with_deepimagej.clj
-          # TODO run this command with proper executable name and paths from the CI (using bb.process?:)
+          bb "(require '[reproduce.run-fiji-scripts :as r]) (r/run-fiji-script)"
+          echo "MODEL FOLDERS AFTER TESTS IN A ROW"
           ls -R ../models
           echo "Now not all models in a row"
           bb -m core.main reproduce
+          echo "MODEL FOLDERS AFTER TESTS IN DIFFERENT FIJI INSTANCES"
           ls -R ../models
 
       - name: print contents of log (error)
