@@ -111,4 +111,9 @@ jobs:
           ls -R ../models
           echo "Now not all models in a row"
           bb -m core.main reproduce
-          ls -R ../models          
+          ls -R ../models
+
+      - name: print contents of log (error)
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: |
+          cat ..\test_summaries\fiji_log_err.txt      
