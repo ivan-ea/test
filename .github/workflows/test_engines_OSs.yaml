@@ -10,7 +10,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   my-job:
+    continue-on-error: true
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         #os: [windows-latest, macos-latest]        
