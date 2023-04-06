@@ -90,6 +90,7 @@ jobs:
       - name: check the commands that will be run for reproduction
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
+          bb "(require '[config :refer [CONSTANTS]])(println (:fiji-executable CONSTANTS) (fs/exists? (:fiji-executable CONSTANTS)))"
           bb "(require '[reproduce.run-fiji-scripts :as r]) (r/build-bash-script)"
           head -n 30 ../resources/test_the_models.sh          
 
@@ -106,7 +107,7 @@ jobs:
       - name: run reproduce pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
-          ~/blank_fiji/Fiji.app/ImageJ-* --headless --console --ij2 --run ./src/reproduce/test_many_with_deepimagej.clj
+          #~/blank_fiji/Fiji.app/ImageJ-* --headless --console --ij2 --run ./src/reproduce/test_many_with_deepimagej.clj
           # TODO run this command with proper executable name and paths from the CI (using bb.process?:)
           ls -R ../models
           echo "Now not all models in a row"
