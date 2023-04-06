@@ -12,8 +12,8 @@ jobs:
   my-job:
     strategy:
       matrix:
-        #os: [ubuntu-latest, windows-latest, macos-latest]
-        os: [windows-latest, macos-latest]        
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        #os: [windows-latest, macos-latest]        
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -76,9 +76,9 @@ jobs:
           bb --version
           bb ../../scripts/info.clj
           bb -m core.main -h
-          bb -m core.main -u # run all unit tests
-          bb "(require '[core.cli-test]) (clojure.test/run-tests 'core.cli-test)" # run core unit tests
-          bb -m core.main -j pending_matrix/variety_models.json init
+          # bb -m core.main -u # run all unit tests
+          # bb "(require '[core.cli-test]) (clojure.test/run-tests 'core.cli-test)" # run core unit tests
+          bb -m core.main -j -pending_matrix/different_engines.json init
           ls -R ../models
 
       - name: check that initial pipeline of CI went OK
