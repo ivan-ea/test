@@ -93,5 +93,6 @@ jobs:
       - name: check the commands that will be run for reproduction
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
+          bb "(require '[config :refer [CONSTANTS]])(println (:fiji-executable CONSTANTS) (fs/exists? (:fiji-executable CONSTANTS)))"
           bb "(require '[reproduce.run-fiji-scripts :as r]) (r/build-bash-script)"
           head -n 30 ../resources/test_the_models.sh

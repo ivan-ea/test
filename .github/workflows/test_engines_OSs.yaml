@@ -12,7 +12,8 @@ jobs:
   my-job:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        #os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [windows-latest, macos-latest]        
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -86,13 +87,22 @@ jobs:
           chmod +x ./bash_scripts/check_initial_CI.sh
           bash ./bash_scripts/check_initial_CI.sh
 
+      - name: check the commands that will be run for reproduction
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: |
+          bb "(require '[reproduce.run-fiji-scripts :as r]) (r/build-bash-script)"
+          head -n 30 ../resources/test_the_models.sh          
+
+      # Download and Reproduce
+
       - name: run download pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
           bb -m core.main -j pending_matrix/different_engines.json download
           bb "(require '[reproduce.setup-fiji :as r]) (r/setup-fiji-&-deepimagej)"
+          bb "(require '[config :refer [CONSTANTS]])(println (:fiji-executable CONSTANTS) (fs/exists? (:fiji-executable CONSTANTS)))"
           ls -R ../models
-
+          
       - name: run reproduce pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
