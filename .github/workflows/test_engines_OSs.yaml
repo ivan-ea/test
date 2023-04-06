@@ -81,7 +81,7 @@ jobs:
           # bb -m core.main -u # run all unit tests
           # bb "(require '[core.cli-test]) (clojure.test/run-tests 'core.cli-test)" # run core unit tests
           bb -m core.main -j pending_matrix/different_engines.json init
-          ls -R ../models
+          ls -R -l ../models
 
       - name: check that initial pipeline of CI went OK
         working-directory: ./CI-deepimagej-bioimage-io/
@@ -104,7 +104,7 @@ jobs:
           bb -m core.main -j pending_matrix/different_engines.json download
           bb "(require '[reproduce.setup-fiji :as r]) (r/setup-fiji-&-deepimagej)"
           bb "(require '[config :refer [CONSTANTS]])(println (:fiji-executable CONSTANTS) (fs/exists? (:fiji-executable CONSTANTS)))"
-          ls -R ../models
+          ls -R -l ../models
       
       - name: see state of fiji executable
         working-directory: scripts
@@ -116,11 +116,11 @@ jobs:
         run: |
           bb "(require '[reproduce.run-fiji-scripts :as r]) (r/grant-exec-permission) (r/run-fiji-script)"
           echo "MODEL FOLDERS AFTER TESTS IN A ROW"
-          ls -R ../models
+          ls -R -l ../models
           echo "Now not all models in a row"
           bb -m core.main reproduce
           echo "MODEL FOLDERS AFTER TESTS IN DIFFERENT FIJI INSTANCES"
-          ls -R ../models
+          ls -R -l ../models
 
       - name: print contents of log (error)
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
