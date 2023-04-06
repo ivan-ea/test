@@ -125,7 +125,7 @@ jobs:
       - name: print contents of log (error)
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
-          cat ..\test_summaries\fiji_log_err.txt
+          cat ../test_summaries/fiji_log_err.txt
 
       - name: see state of fiji executable
         working-directory: scripts
