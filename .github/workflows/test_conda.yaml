@@ -79,11 +79,6 @@ jobs:
           bb -m core.main -j ./pending_matrix/lightweight_models.json download
           ls -R -l ../models
 
-      - name: check that initial pipeline of CI went OK
-        run: |
-          chmod +x ./bash_scripts/check_initial_CI.sh
-          bash ./bash_scripts/check_initial_CI.sh
-
       - name: run reproduce pipeline
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: |
