@@ -19,6 +19,8 @@ print("script path is", script)
 
 #arg = "folder=\"C:/Users/hestevez/REPOS/CI-deepimagej-bioimage-io/java_CI_scripts/../models/10.5281/zenodo.6348084/6348085\""
 
+print("# Model 1")
+
 folder = Path("../models/10.5281/zenodo.7786492/7786493")
 folder_str = str(folder.absolute()).replace("\\","/")
 arg = "folder='{}'".format(folder_str)
@@ -26,7 +28,12 @@ print("folder is",folder)
 
 cmd = [exec_file] + fiji_flags + [script, arg]
 
-c = subprocess.run(cmd)
+c = subprocess.run(cmd, capture_output=True, text=True)
+
+print("STD OUTPUT")
+print(c.stdout) # <- print them also in files
+print("STD ERROR")
+print(c.stderr)
 
 print("# Model 2")
 
@@ -38,5 +45,9 @@ print("folder is",folder)
 cmd = [exec_file] + fiji_flags + [script, arg]
 
 
-c = subprocess.run(cmd)
+c = subprocess.run(cmd, capture_output=True, text=True)
 
+print("STD OUTPUT")
+print(c.stdout)
+print("STD ERROR")
+print(c.stderr)
