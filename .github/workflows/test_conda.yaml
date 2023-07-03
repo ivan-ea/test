@@ -56,9 +56,16 @@ jobs:
           auto-update-conda: true
           python-version: "3.10"
 
-      - name: check conda install
+      - name: check conda install (default shell)
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
-        shell: cmd /C CALL {0}
+        run: |
+          conda env list
+          conda info
+          python --version
+
+      - name: check conda install (pwsh)
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        shell: pwsh
         run: |
           conda env list
           conda info
@@ -79,17 +86,24 @@ jobs:
           bb -m core.main -j ./pending_matrix/lightweight_models.json download
           ls -R -l ../models
 
-      - name: run reproduce pipeline
-        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
-        run: |
-          bb --version
-          bb -m core.main reproduce
-
-      - name: test shelling out from python
+      - name: test shelling out from python in CMD
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts      
         shell: cmd /C CALL {0}
         run: |
-          python ..\..\test\python_scripts\shelling_gh.py
+          python ..\python_scripts\shelling_gh.py
+
+      - name: check output of run
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: |
+          # bb -m core.main reproduce
+          ls -R -l ../models
+
+      - name: test shelling out from python in PowerShell Core
+        shell: pwsh
+        run: |
+          conda info
+          conda list
+          python ..\python_scripts\shelling_gh.py
 
 
 
