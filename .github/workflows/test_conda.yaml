@@ -101,16 +101,28 @@ jobs:
 
       - name: check output of run
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
-        run: |
-          # bb -m core.main reproduce
-          ls -R -l ../models
+        run: ls -R -l ../models
 
       - name: test shelling out from python in PowerShell Core
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts     
         shell: pwsh
         run: |
-          conda info
-          conda list
+          conda env list
           python ..\..\python_scripts\shelling_gh.py
+
+      - name: check output of run
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: ls -R -l ../models
+
+      - name: test shelling out from python (default shell)
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: |
+          conda info
+          python ..\..\python_scripts\shelling_gh.py
+
+      - name: check output of run
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+        run: ls -R -l ../models
 
 
 
