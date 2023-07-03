@@ -46,6 +46,13 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world! ${{ inputs.pending_matrix }}
 
+      - name: Run several lines scripts
+        run: | 
+          pwd
+          dir
+          dir python_scripts
+
+
       - name: setup babashka
         uses: turtlequeue/setup-babashka@v1.5.0
         with:
@@ -90,7 +97,7 @@ jobs:
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts      
         shell: cmd /C CALL {0}
         run: |
-          python ..\python_scripts\shelling_gh.py
+          python ..\..\python_scripts\shelling_gh.py
 
       - name: check output of run
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
@@ -103,7 +110,7 @@ jobs:
         run: |
           conda info
           conda list
-          python ..\python_scripts\shelling_gh.py
+          python ..\..\python_scripts\shelling_gh.py
 
 
 
