@@ -63,14 +63,7 @@ jobs:
           auto-update-conda: true
           python-version: "3.10"
 
-      - name: check conda install (default shell)
-        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
-        run: |
-          conda env list
-          conda info
-          python --version
-
-      - name: check conda install (pwsh)
+      - name: check conda install (pwsh, that is the default shell)
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         shell: pwsh
         run: |
@@ -93,36 +86,28 @@ jobs:
           bb -m core.main -j ./pending_matrix/lightweight_models.json download
           ls -R -l ../models
 
-      - name: test shelling out from python in CMD
-        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts      
-        shell: cmd /C CALL {0}
-        run: |
-          python ..\..\python_scripts\shelling_gh.py
-
-      - name: check output of run
-        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
-        run: ls -R -l ../models
-
-      - name: test shelling out from python in PowerShell Core
+      - name: test shelling out from python in PowerShell Core (default shell)
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts     
         shell: pwsh
         run: |
           conda env list
-          python ..\..\python_scripts\shelling_gh.py
+          python -u ..\..\python_scripts\shelling_gh.py
 
       - name: check output of run
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: ls -R -l ../models
 
-      - name: test shelling out from python (default shell)
-        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
+      - name: test shelling out from python in CMD
+        working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts      
+        shell: cmd /C CALL {0}
         run: |
-          conda info
-          python ..\..\python_scripts\shelling_gh.py
+          python -u ..\..\python_scripts\shelling_gh.py
 
       - name: check output of run
         working-directory: ./CI-deepimagej-bioimage-io/java_CI_scripts
         run: ls -R -l ../models
+
+
 
 
 

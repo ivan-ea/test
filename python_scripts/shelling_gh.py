@@ -24,7 +24,19 @@ folder_str = str(folder.absolute()).replace("\\","/")
 arg = "folder='{}'".format(folder_str)
 print("folder is",folder)
 
-cmd = [exec_file] + fiji_flags+ [script, arg]
+cmd = [exec_file] + fiji_flags + [script, arg]
+
+c = subprocess.run(cmd)
+
+print("# Model 2")
+
+folder = Path("../models/10.5281/zenodo.6338614/6338615")
+folder_str = str(folder.absolute()).replace("\\","/")
+arg = "folder='{}'".format(folder_str)
+print("folder is",folder)
+
+cmd = [exec_file] + fiji_flags + [script, arg]
+
 
 c = subprocess.run(cmd)
 
