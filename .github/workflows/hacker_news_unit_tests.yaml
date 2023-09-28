@@ -59,7 +59,7 @@ jobs:
           echo ----
           ls ..
 
-      - name: Execute clojure code
+      - name: Run unit tests
         working-directory: ./web-crawl-clj
         run: clojure -M -m core t
 

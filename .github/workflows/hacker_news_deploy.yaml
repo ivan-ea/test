@@ -79,6 +79,7 @@ jobs:
           echo \`\`\`\` | tee -a README.md
           echo "> tail hnews_current_filter_1.json" | tee -a README.md
           tail hnews_current_filter_1.json | tee -a README.md
+          echo "" | tee -a README.md
           echo \`\`\`\` | tee -a README.md
           echo "## Results for filter 2" | tee -a README.md
           echo \`\`\`\` | tee -a README.md
@@ -88,6 +89,7 @@ jobs:
           echo \`\`\`\` | tee -a README.md
           echo "> tail hnews_current_filter_2.json" | tee -a README.md
           tail hnews_current_filter_1.json | tee -a README.md
+          echo "" | tee -a README.md
           echo \`\`\`\` | tee -a README.md
       
       - name: upload the results
