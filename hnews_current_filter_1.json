@@ -1,101 +1,101 @@
 [ {
-  "title" : "Open Source does not win by being cheaper",
-  "rank" : "29.",
-  "points" : 350,
-  "n-comments" : 212
-}, {
   "title" : "Inhibition of fatty acid oxidation enables heart regeneration in adult mice",
-  "rank" : "4.",
-  "points" : 109,
-  "n-comments" : 92
+  "rank" : "5.",
+  "points" : 111,
+  "n-comments" : 93
 }, {
   "title" : "Why are websites requesting access to motion sensors on my desktop? (2019)",
-  "rank" : "10.",
-  "points" : 108,
-  "n-comments" : 92
+  "rank" : "12.",
+  "points" : 110,
+  "n-comments" : 93
 }, {
   "title" : "Uiua: A minimal stack-based, array-based language",
-  "rank" : "19.",
+  "rank" : "21.",
   "points" : 284,
-  "n-comments" : 74
+  "n-comments" : 75
 }, {
   "title" : "Iconic tree at Hadrian's Wall's 'Sycamore Gap' has been 'felled'",
-  "rank" : "25.",
-  "points" : 75,
-  "n-comments" : 68
+  "rank" : "27.",
+  "points" : 77,
+  "n-comments" : 72
 }, {
   "title" : "Why does trying to break into the NT 3.1 kernel reboot my 486DX4 machine?",
-  "rank" : "5.",
-  "points" : 331,
-  "n-comments" : 67
+  "rank" : "6.",
+  "points" : 335,
+  "n-comments" : 69
 }, {
   "title" : "Ask HN: Lessons learned from implementing user-facing analytics / dashboards?",
   "rank" : "13.",
-  "points" : 69,
-  "n-comments" : 59
+  "points" : 71,
+  "n-comments" : 60
 }, {
   "title" : "JWST discovers massive and compact quiescent galaxy",
-  "rank" : "20.",
+  "rank" : "22.",
   "points" : 113,
-  "n-comments" : 58
+  "n-comments" : 59
 }, {
   "title" : "Is the Physics of Time Changing?",
-  "rank" : "23.",
+  "rank" : "25.",
   "points" : 42,
   "n-comments" : 48
 }, {
   "title" : "Show HN: Carton – Run any ML model from any programming language",
-  "rank" : "16.",
-  "points" : 157,
+  "rank" : "18.",
+  "points" : 158,
   "n-comments" : 43
 }, {
   "title" : "A trilobite found with a full stomach",
-  "rank" : "28.",
-  "points" : 78,
-  "n-comments" : 38
+  "rank" : "29.",
+  "points" : 79,
+  "n-comments" : 39
 }, {
   "title" : "Interactive GCC (igcc) is a read-eval-print loop (REPL) for C/C++",
-  "rank" : "7.",
+  "rank" : "8.",
   "points" : 112,
   "n-comments" : 36
 }, {
   "title" : "A skyscraper that could have toppled over in the wind (1995)",
-  "rank" : "27.",
-  "points" : 67,
+  "rank" : "28.",
+  "points" : 69,
   "n-comments" : 15
-}, {
-  "title" : "Function Composition in Programming Languages [video]",
-  "rank" : "18.",
-  "points" : 18,
-  "n-comments" : 5
 }, {
   "title" : "Very high number of workplace accidents at Tesla factory in Germany",
   "rank" : "1.",
-  "points" : 17,
-  "n-comments" : 3
+  "points" : 28,
+  "n-comments" : 10
 }, {
-  "title" : "Fairphone 4 with /e/OS by Murena now available at fairphone.com",
-  "rank" : "8.",
-  "points" : 22,
-  "n-comments" : 3
+  "title" : "Function Composition in Programming Languages [video]",
+  "rank" : "19.",
+  "points" : 19,
+  "n-comments" : 5
 }, {
   "title" : "OpenAI and Jony Ive in talks to raise $1B from SoftBank for AI device venture",
-  "rank" : "17.",
-  "points" : 5,
+  "rank" : "15.",
+  "points" : 7,
+  "n-comments" : 4
+}, {
+  "title" : "Fairphone 4 with /e/OS by Murena now available at fairphone.com",
+  "rank" : "9.",
+  "points" : 25,
+  "n-comments" : 3
+}, {
+  "title" : "X CEO Says Platform Should Turn Profit in 2024",
+  "rank" : "3.",
+  "points" : 7,
+  "n-comments" : 1
+}, {
+  "title" : "FreeRDP: A remote desktop protocol implementation",
+  "rank" : "24.",
+  "points" : 7,
   "n-comments" : 1
 }, {
   "title" : "The creative agency of small projects",
-  "rank" : "12.",
-  "points" : 3,
-  "n-comments" : 0
-}, {
-  "title" : "FreeRDP: A remote desktop protocol implementation",
-  "rank" : "21.",
+  "rank" : "14.",
   "points" : 5,
   "n-comments" : 0
 }, {
   "title" : "Cloudflare is now powering Microsoft Edge Secure Network",
-  "rank" : "22.",
-  "points" : 14,
+  "rank" : "20.",
+  "points" : 19,
   "n-comments" : 0
 } ]

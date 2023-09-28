@@ -1,51 +1,51 @@
 [ {
   "title" : "Raspberry Pi 5",
-  "rank" : "24.",
-  "points" : 843,
-  "n-comments" : 521
+  "rank" : "26.",
+  "points" : 848,
+  "n-comments" : 528
 }, {
   "title" : "That's a Lot of YAML",
-  "rank" : "9.",
-  "points" : 242,
-  "n-comments" : 219
+  "rank" : "11.",
+  "points" : 246,
+  "n-comments" : 223
 }, {
   "title" : "Lisp Badge LE",
-  "rank" : "14.",
-  "points" : 213,
+  "rank" : "16.",
+  "points" : 214,
   "n-comments" : 33
 }, {
   "title" : "As We May Think (1945)",
-  "rank" : "6.",
-  "points" : 117,
+  "rank" : "7.",
+  "points" : 119,
   "n-comments" : 29
-}, {
-  "title" : "Prophetic Perfect Tense",
-  "rank" : "15.",
-  "points" : 100,
-  "n-comments" : 52
 }, {
   "title" : "WebGPU Technical Report",
   "rank" : "2.",
-  "points" : 99,
+  "points" : 100,
   "n-comments" : 13
 }, {
+  "title" : "Prophetic Perfect Tense",
+  "rank" : "17.",
+  "points" : 100,
+  "n-comments" : 52
+}, {
   "title" : "Tao Te Ching",
-  "rank" : "11.",
-  "points" : 59,
-  "n-comments" : 68
+  "rank" : "10.",
+  "points" : 62,
+  "n-comments" : 70
 }, {
   "title" : "Scientists unveil fire-safe fuel",
-  "rank" : "3.",
-  "points" : 55,
-  "n-comments" : 45
+  "rank" : "4.",
+  "points" : 56,
+  "n-comments" : 46
 }, {
   "title" : "Techniques in Persuasion from Antiquity",
   "rank" : "30.",
-  "points" : 55,
+  "points" : 56,
   "n-comments" : 13
 }, {
   "title" : "Garbage In, Toxics Out",
-  "rank" : "26.",
-  "points" : 5,
+  "rank" : "23.",
+  "points" : 8,
   "n-comments" : 0
 } ]
