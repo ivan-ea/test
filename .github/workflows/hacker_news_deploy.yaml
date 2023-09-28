@@ -68,11 +68,10 @@ jobs:
           ls results
       
       - name: upload the results
-        working-directory: ./web-crawl-clj
         uses: actions/upload-artifact@v3
         with:
           name: results
-          path: ./results
+          path: ./web-crawl-clj/results
           retention-days: 1
 
   deploy:

@@ -62,4 +62,10 @@ jobs:
       - name: Execute clojure code
         working-directory: ./web-crawl-clj
         run: clojure -M -m core t
+
+      - name: Run web crawler on current version of the website
+        working-directory: ./web-crawl-clj
+        run: | 
+          clojure -M -m core 0
+          ls results
         
