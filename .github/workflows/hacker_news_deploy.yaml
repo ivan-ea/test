@@ -69,7 +69,7 @@ jobs:
 
       - name: Readme for results
         working-directory: ./web-crawl-clj/results
-        run |
+        run: |
           echo "# Results for the current version of Hacker News" | tee README.md
           echo "## Results for filter 1" | tee -a README.md
           echo \`\`\`\` | tee -a README.md
