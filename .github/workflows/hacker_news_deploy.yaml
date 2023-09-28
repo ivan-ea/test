@@ -1,4 +1,4 @@
-name: Run unit tests on push
+name: Deploy results on another branch
 
 on:
   workflow_dispatch:
