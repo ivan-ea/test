@@ -66,6 +66,29 @@ jobs:
         run: | 
           clojure -M -m core 0
           ls results
+
+      - name: Readme for results
+        working-directory: ./web-crawl-clj/results
+        run |
+          echo "# Results for the current version of Hacker News" | tee README.md
+          echo "## Results for filter 1" | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo "> head hnews_current_filter_1.json" | tee -a README.md
+          head hnews_current_filter_1.json | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo "> tail hnews_current_filter_1.json" | tee -a README.md
+          tail hnews_current_filter_1.json | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo "## Results for filter 2" | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo "> head hnews_current_filter_2.json" | tee -a README.md
+          head hnews_current_filter_1.json | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
+          echo "> tail hnews_current_filter_2.json" | tee -a README.md
+          tail hnews_current_filter_1.json | tee -a README.md
+          echo \`\`\`\` | tee -a README.md
       
       - name: upload the results
         uses: actions/upload-artifact@v3
